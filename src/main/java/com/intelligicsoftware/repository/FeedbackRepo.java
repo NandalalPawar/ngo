@@ -8,9 +8,9 @@ import com.intelligicsoftware.dto.LoginDto;
 import com.intelligicsoftware.model.Feedback;
 import com.intelligicsoftware.model.Staff;
 
-public interface FeedbackRepo extends JpaRepository<FeedbackDto, Long>{
+public interface FeedbackRepo extends JpaRepository<Feedback, Long>{
 
-	FeedbackDto save(Feedback map);
+	Feedback findByLogin(LoginDto login);
 
 
 }

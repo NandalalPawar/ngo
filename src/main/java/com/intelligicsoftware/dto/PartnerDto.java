@@ -1,6 +1,9 @@
 package com.intelligicsoftware.dto;
 
 
+import com.intelligicsoftware.model.Address;
+
+import jakarta.persistence.Embedded;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -32,6 +35,8 @@ private Long PartnerId;
 	@Pattern(regexp = "^((https?|ftp|smtp):\\/\\/)?(www.)?[a-z0-9]+\\.[a-z]+(\\/[a-zA-Z0-9#]+\\/?)*$")
 	private String PartnerWebsite;
 
+	@Embedded
+	private Address address;
 }
 
 

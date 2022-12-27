@@ -1,10 +1,6 @@
 package com.intelligicsoftware.model;
 
-import javax.management.loading.PrivateClassLoader;
 
-import org.hibernate.type.descriptor.java.LongJavaType;
-
-import com.intelligicsoftware.dto.DonarDto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -24,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class Donar {
 	@Id
 	@Column(name = "donar_id")

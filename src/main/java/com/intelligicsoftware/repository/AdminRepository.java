@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.intelligicsoftware.dto.LoginDto;
 import com.intelligicsoftware.model.Admin;
 
-@Repository
-public interface AdminRepository extends JpaRepository<Admin, Serializable>{
+
+public interface AdminRepository extends JpaRepository<Admin, Long>{
 
 	Admin findByLogin(LoginDto login);
 }

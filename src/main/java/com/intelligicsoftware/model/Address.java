@@ -9,8 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "address_details")
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,7 +17,7 @@ import lombok.Setter;
 @Embeddable
 public class Address {
 	
-	@Id
+	
 	@Column(name = "area")
 	private String area;
 	

@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.intelligicsoftware.constants.AppConstants;
 import com.intelligicsoftware.dto.PartnerDto;
 import com.intelligicsoftware.payloads.ApiResponse;
 import com.intelligicsoftware.service.PartnerService;
-
+@RequestMapping("/api")
 public class PatnerController {
 	@Autowired
 	private PartnerService partnerService;

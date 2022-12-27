@@ -1,10 +1,14 @@
 package com.intelligicsoftware.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,5 +48,11 @@ public class Staff {
 	
 	@Column(name ="staff_dob")
 	private String staffDob;
+	
+	@Embedded
+	private Address address;
 
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "login_id")
+	private Login login;
 }

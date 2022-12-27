@@ -1,6 +1,9 @@
 package com.intelligicsoftware.dto;
 
+import com.intelligicsoftware.model.Address;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -36,5 +39,7 @@ public class StaffDto {
 	private String staffGender;
 	@NotEmpty
 	private String staffDob;
-
+	
+	@Embedded
+	private Address address;
 }

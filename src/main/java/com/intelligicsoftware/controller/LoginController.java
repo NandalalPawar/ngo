@@ -20,44 +20,40 @@ import com.intelligicsoftware.service.StaffService;
 @RestController
 @RequestMapping("/api")
 public class LoginController {
-@Autowired
+	@Autowired
 	private LoginService loginService;
-@Autowired
-private StaffService staffService;
+	@Autowired
+	private StaffService staffService;
 
-@Autowired
-private AdminService adminService;
+	@Autowired
+	private AdminService adminService;
 
-@Autowired
-private PartnerService partnerService;
-@Autowired
-private DonarService donarService;
-	
-@GetMapping("/get/{loginUsername}/{loginPassword}")
-public Object getLogin(@PathVariable String LoginUsername, @PathVariable String LoginPassword) {
-	LoginDto login = this.loginService.getLogin(LoginUsername, LoginPassword);
-	
-	if(login.getLoginType().equalsIgnoreCase("staff")) {
-StaffDto staffDto= this.staffService.getStaffByLogin(login);
-	
-return staffDto;
-	}
-	else if (login.getLoginType().equalsIgnoreCase("Admin"))	{
-		AdminDto admindto= this.adminService.getAdminByLogin(login);
-	 	return admindto;
-	}
-	else if (login.getLoginType().equalsIgnoreCase("partner")) {
-		PartnerDto partnerByLogin = this.partnerService.getPartnerByLogin(login);
-		return partnerByLogin;
-	}
-	else if(login.getLoginType().equalsIgnoreCase("donar")) {
-		DonarDto donarByLogin = this.donarService.getDonarByLogin(login);
-		return donarByLogin;
-		
-	}
+	@Autowired
+	private PartnerService partnerService;
+	@Autowired
+	private DonarService donarService;
 
-	return login;
-}
+	@GetMapping("/get/{loginUsername}/{loginPassword}")
+	public Object getLogin(@PathVariable String LoginUsername, @PathVariable String LoginPassword) {
+		LoginDto login = this.loginService.getLogin(LoginUsername, LoginPassword);
 
+		if (login.getLoginType().equalsIgnoreCase("staff")) {
+			StaffDto staffDto = this.staffService.getStaffByLogin(login);
+
+			return staffDto;
+		} else if (login.getLoginType().equalsIgnoreCase("Admin")) {
+			AdminDto admindto = this.adminService.getAdminByLogin(login);
+			return admindto;
+		} else if (login.getLoginType().equalsIgnoreCase("partner")) {
+			PartnerDto partnerByLogin = this.partnerService.getPartnerByLogin(login);
+			return partnerByLogin;
+		} else if (login.getLoginType().equalsIgnoreCase("donar")) {
+			DonarDto donarByLogin = this.donarService.getDonarByLogin(login);
+			return donarByLogin;
+
+		}
+
+		return login;
+	}
 
 }

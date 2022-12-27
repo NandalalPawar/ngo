@@ -1,5 +1,8 @@
 package com.intelligicsoftware.dto;
 
+import com.intelligicsoftware.model.Address;
+
+import jakarta.persistence.Embedded;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
@@ -36,5 +39,7 @@ public class DonarDto {
 @NotEmpty
 	private Long donorAmount;
 	
+	@Embedded
+	private Address address;
 	
 }

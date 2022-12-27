@@ -25,7 +25,7 @@ public class Login {
 	private String loginUsername;
 	
 	@Column(name = "login_password")
-	private String ginPassword;
+	private String loginPassword;
 	
 	@Column(name = "login_type")
 	private String loginType;

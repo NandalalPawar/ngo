@@ -18,10 +18,10 @@ public class LoginDto {
 
 	@NotEmpty
 	private String loginUsername;
-@NotEmpty
-@Pattern(regexp = "\"^(?=.*[A-Za-z])(?=.*\\\\d)(?=.*[@$!%*#?&])[A-Za-z\\\\d@$!%*#?&]{8,}$\")")
+	@NotEmpty
+	@Pattern(regexp = "\"^(?=.*[A-Za-z])(?=.*\\\\d)(?=.*[@$!%*#?&])[A-Za-z\\\\d@$!%*#?&]{8,}$\")")
 	private String loginPassword;
-@NotEmpty
+	@NotEmpty
 	private String loginType;
 
 }
