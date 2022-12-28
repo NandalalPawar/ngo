@@ -35,4 +35,5 @@ public class AdminDto {
 	
 	@Embedded
 	private Address address;
+// this is admin dto class
 }
